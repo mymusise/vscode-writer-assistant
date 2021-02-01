@@ -1,0 +1,74 @@
+{
+	"name": "writer-assistant",
+	"description": "Help writer write faster",
+	"author": "mymusise",
+	"license": "MIT",
+	"version": "0.0.3",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mymusise"
+	},
+	"publisher": "mymusise",
+	"categories": [],
+	"keywords": [
+		"multi-root ready"
+	],
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"activationEvents": [
+		"onLanguage:plaintext"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Example configuration",
+			"properties": {
+				"compositionAssistant.serverAddress": {
+					"scope": "resource",
+					"type": "string",
+					"default": "https://wrlp.mymusise.com",
+					"description": "生成服务地址."
+				},
+				"compositionAssistant.maxContext": {
+					"scope": "resource",
+					"type": "number",
+					"default": 128,
+					"description": "最大参考上下文长度."
+				},
+				"compositionAssistant.maxLength": {
+					"scope": "resource",
+					"type": "number",
+					"default": 8,
+					"description": "生成文本的长度."
+				},
+				"compositionAssistant.numSuggest": {
+					"scope": "resource",
+					"type": "number",
+					"default": 3,
+					"description": "生成的句子数量."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+		"test": "sh ./scripts/e2e.sh"
+	},
+	"devDependencies": {
+		"@types/mocha": "^8.0.3",
+		"mocha": "^8.1.1",
+		"@types/node": "^12.12.0",
+		"eslint": "^6.4.0",
+		"@typescript-eslint/parser": "^2.3.0",
+		"typescript": "^4.0.2"
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"got": "^11.8.1"
+	}
+}
