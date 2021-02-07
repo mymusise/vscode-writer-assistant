@@ -50,6 +50,13 @@ docker run -d -p 23423:80 --name writer-assistant-server mymusise/writer-assista
 
 ![图](https://github.com/mymusise/vscode-writer-assistant/raw/main/images/settings.jpeg)
 
+
+## 关于模型
+
+- 模型原型： [GPT-2](https://openai.com/blog/better-language-models/)
+- 数据源： [nlp_chinese_corpus](https://github.com/brightmart/nlp_chinese_corpus)
+- 训练代码： https://github.com/mymusise/gpt2-quickly
+
 ### 声明
 
 项目用到的数据均来源网络，本项目未进行任何商业目的。本项目遵从[GPL协议](LICENSE)，引用请注明出处。
